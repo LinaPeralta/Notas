@@ -33,26 +33,31 @@ public class NameActivity extends AppCompatActivity {
         nombreText=  findViewById(R.id.nombreText);
 
 
-
+//botones
         backBtn.setOnClickListener((view)->{
             Intent mainIntent = new Intent(this,MainActivity.class);
             startActivity(mainIntent);
-            overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
+           //; overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
         });
 
         continuarBtn.setOnClickListener((view) -> {
                     //accion
-                   // String username = nombreText.getText().toString();
+                   String username = nombreText.getText().toString();
 
-                    Intent i = new Intent( this, CalculoActivity.class);
-                    startActivity(i);
-                    overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
+                    Intent calculoActivity = new Intent( this, CalculoActivity.class);
+                    calculoActivity.putExtra("nombre", username);
+
+                    startActivity(calculoActivity);
+                    nombreText.getText().clear();
+
+
+                   // overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
 
                 }
         );
     }
 
-    protected void onResume() {
+  /*  protected void onResume() {
 
         super.onResume();
 
@@ -61,4 +66,6 @@ public class NameActivity extends AppCompatActivity {
 
         backLayout.setBackgroundColor(Color.parseColor(color));
     }
+
+   */
 }
