@@ -50,14 +50,13 @@ public class NameActivity extends AppCompatActivity {
                     startActivity(calculoActivity);
                     nombreText.getText().clear();
 
-
-                   // overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
+                    overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
 
                 }
         );
     }
 
-  /*  protected void onResume() {
+  /* protected void onResume() {
 
         super.onResume();
 
@@ -67,5 +66,9 @@ public class NameActivity extends AppCompatActivity {
         backLayout.setBackgroundColor(Color.parseColor(color));
     }
 
+
+
    */
+
+
 }

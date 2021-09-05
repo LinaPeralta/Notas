@@ -35,19 +35,25 @@ public class MainActivity extends AppCompatActivity {
         grisBtn = findViewById(R.id.grisBtn);
         grisBtn.setOnClickListener((view)->{
             sp.edit().putString("color","#C4C4C4").apply();
-            finish();
+            //finish();
+            Intent nameIntent = new Intent(this,NameActivity.class);
+            startActivity(nameIntent);
         });
 
         blancoBtn = findViewById(R.id.blancoBtn);
         blancoBtn.setOnClickListener((view)->{
             sp.edit().putString("color","#F3F2FA").apply();
-            finish();
+           // finish();
+            Intent nameIntent = new Intent(this,NameActivity.class);
+            startActivity(nameIntent);
         });
 
         azulBtn = findViewById(R.id.azulBtn);
         azulBtn.setOnClickListener((view)->{
             sp.edit().putString("color","#DAEBEF").apply();
-            finish();
+            //finish();
+            Intent nameIntent = new Intent(this,NameActivity.class);
+            startActivity(nameIntent);
         });
 
 
@@ -55,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
             Intent nameIntent = new Intent(this,NameActivity.class);
             startActivity(nameIntent);
 
-
-            //; overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
+            overridePendingTransition(R.anim.animacion1,R.anim.animacion2);
         });
         
 
@@ -64,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
- /*  protected void onResume() {
+   /*protected void onResume() {
 
         super.onResume();
 
@@ -74,12 +79,15 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("colorActual",color);
 
-
         backLayout1.setBackgroundColor(Color.parseColor(color));
 
 
     }
 
-     */
+    */
+
+
+
+
 
 }

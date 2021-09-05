@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ public class CalculoActivity extends AppCompatActivity {
     private EditText parcial1Text;
     private EditText parcial2Text;
     private String username;
+
 
 
     private double proyecto1a,  proyecto2a, quices, parcial1a, parcial2a;
@@ -39,6 +41,7 @@ public class CalculoActivity extends AppCompatActivity {
 
         //nombre del usuario
         username = getIntent().getExtras().getString("nombre");
+       // notaFinal = getIntent().getExtras().getInt("notaFinal");
 
 
         calculoBtn.setOnClickListener((view)->{
@@ -61,7 +64,7 @@ public class CalculoActivity extends AppCompatActivity {
                   //calcular la nota final
 
 
-                    notaFinal = ((proyecto1a*0.15) + (proyecto2a*0.15) + (quices*0.10) + (parcial1a*0.40 ) + (parcial2a*0.40));
+                    notaFinal = ((proyecto1a*0.15) + (proyecto2a*0.15) + (quices*0.10) + (parcial1a*0.30 ) + (parcial2a*0.30));
 
                     if (enviar == true){
                         //Intent
@@ -69,6 +72,7 @@ public class CalculoActivity extends AppCompatActivity {
                         resultadoActivity.putExtra("notaFinal",notaFinal);
                         resultadoActivity.putExtra("nombre", username);
                         startActivity(resultadoActivity);
+                        Log.d("actualNota", String.valueOf(notaFinal));
                         finish();
                     }
 
